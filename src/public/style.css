@@ -1,0 +1,173 @@
+:root {
+    --base-text-color: #e8eae6; /* Cinza claro com tom esverdeado para textos principais */
+    --base-text-placeholder-color: #a3a9a5; /* Cinza suave para placeholders */
+    --base-background-color: #1c1f1d; /* Cinza muito escuro com leve toque de verde */
+    --painel-background-color: #2b2f2d; /* Cinza escuro para painéis */
+    --works-background-color: #3a3f3c; /* Cinza médio com leve toque verde para áreas de trabalho */
+    --works-complete-background-color: #4e544f; /* Cinza mais claro e neutro para itens concluídos */
+    --works-complete-status-background-color: #5f675f; /* Cinza esverdeado suave para status de conclusão */
+    --works-incomplete-status-background-color: #9a3b3b; /* Vermelho queimado para pendências */
+    --apagar-background-color: #732a2a; /* Vermelho escuro e profundo para botões de apagar */
+    --adicionar-background-color: #2a5f4f; /* Verde escuro elegante para botões de adicionar */
+}
+
+[data-theme="light"] {
+    --base-text-color: #1c1f1d; /* Cinza escuro para textos principais em fundo claro */
+    --base-text-placeholder-color: #5f675f; /* Cinza suave para placeholders */
+    --base-background-color: #f4f5f3; /* Cinza muito claro para o fundo principal */
+    --painel-background-color: #e1e3e0; /* Cinza claro para painéis */
+    --works-background-color: #d5d7d3; /* Cinza médio claro para áreas de trabalho */
+    --works-complete-background-color: #c8ccc7; /* Cinza esverdeado claro para itens concluídos */
+    --works-complete-status-background-color: #b4bcb2; /* Verde acinzentado claro para status de conclusão */
+    --works-incomplete-status-background-color: #e29f9f; /* Vermelho suave para pendências */
+    --apagar-background-color: #d97b7b; /* Vermelho claro suave para botões de apagar */
+    --adicionar-background-color: #7db89e; /* Verde claro suave para botões de adicionar */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--base-background-color);
+    color: var(--base-text-color);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.5em;
+    background-color: var(--works-background-color);
+    color: var(--base-text-color);
+    border: none;
+    border-radius: 5px;
+}
+
+input[type="text"]::placeholder {
+    color: var(--base-text-placeholder-color);
+}
+
+button {
+    opacity: 0.85;
+}
+
+button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+main {
+    background-color: var(--painel-background-color);
+
+    width: 100%;
+    max-width: 400px;
+    height: calc(100% - 2em);
+    max-height: 600px;
+
+    margin: 1em;
+    padding: 1em;
+
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 1em;
+}
+
+header{
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.25em;
+    color: var(--base-text-color);
+    cursor: pointer;
+}
+
+.works {
+    flex-grow: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--works-background-color) var(--painel-background-color);
+}
+
+.works ul {
+    list-style: none;
+}
+
+.works li {
+    background-color: var(--works-background-color);
+    padding: 1em;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    cursor: pointer;
+}
+
+.works li.complete {
+    background-color: var(--works-complete-background-color);
+}
+
+.works li:last-child {
+    margin-bottom: 0;
+}
+
+.works li .description {
+    flex-grow: 1;
+}
+
+.works li .status {
+    text-wrap: nowrap;
+    background-color: var(--works-incomplete-status-background-color);
+    padding: 0.5em;
+    font-size: 1em;
+    color: var(--base-text-color);
+    border-radius: 5px;
+    min-width: 80px;
+    text-align: center;
+}
+
+.works li.complete .status {
+    background-color: var(--works-complete-status-background-color);
+}
+
+
+.works li button {
+    text-wrap: nowrap;
+    background-color: var(--apagar-background-color);
+    border: none;
+    padding: 0.5em;
+    font-size: 1em;
+    color: var(--base-text-color);
+    border-radius: 5px;
+}
+
+.new-work {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 1em;
+}
+
+.new-work button {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--adicionar-background-color);
+    color: var(--base-text-color);
+}
+
