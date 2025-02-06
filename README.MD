@@ -38,3 +38,31 @@ Para rodar o projeto localmente, siga os passos:
    ```
 
 O aplicativo será iniciado no navegador em `http://localhost:8080`.
+
+## Backend (opcional)
+
+Originalmente, este projeto se comunicava com uma API RESTful, que pode ser acessada em [github.com/gsjunqueira/To-Do-List-Backend](https://github.com/gsjunqueira/To-Do-List-Backend.git).
+
+Para usar o backend, após o clone do repositório, volte um commit para trás. Dessa forma será usado a API ao invés do localStorage do navegador.
+
+```git reset --hard HEAD~1
+```
+
+Para executar o backend localmente:
+
+1. Clone o repositório backend:
+
+   ```git clone https://github.com/sergiocabral/Sample.JavaScript.TodoList.Backend
+   ```
+
+2. Instale as dependências:
+
+   ```npm install
+   ```
+
+3. Inicie o servidor:
+
+   ```npm start
+   ```
+
+O backend será executado em `http://localhost:3030` e a aplicação frontend irá se comunicar diretamente com ele. As rotas da API estão documentadas na página do GitHub do backend.
